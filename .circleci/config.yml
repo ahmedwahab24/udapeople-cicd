@@ -33,9 +33,9 @@ commands:
             sudo npm install --global n
             sudo n 13.8.0
 
-            sudo npm install -g npx
+            sudo npm --force install -g npx
             sudo tsc
-            sudo npm install -g typescript
+            sudo npm --force install -g typescript
             sudo npm run build
 
 
