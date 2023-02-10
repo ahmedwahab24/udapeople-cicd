@@ -268,7 +268,7 @@ jobs:
             sudo npm --force install -g typescript
             npm --force install
             tsc
-            sudo npm --force run build
+# sudo npm --force run build
             npm run migrations > migrations_dump.txt
             cat migrations_dump.txt
       - run:
