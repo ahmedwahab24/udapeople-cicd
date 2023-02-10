@@ -33,11 +33,10 @@ commands:
             sudo npm install --global n
             sudo n 13.8.0
 
-            sudo chown -R $USER /usr/local/lib/node_modules
-            npm install -g npx
-            tsc
-            npm install -g typescript
-            npm run build
+            sudp npm install -g npx
+            sudo tsc
+            sudo npm install -g typescript
+            sudo npm run build
 
 
 
