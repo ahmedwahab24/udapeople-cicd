@@ -264,6 +264,9 @@ jobs:
           name: Run migrations
           command: |
             cd backend
+            npm install -g npx
+            tsc
+            npm install -g typescript
             npm install
             npm run migrations > migrations_dump.txt
             cat migrations_dump.txt
