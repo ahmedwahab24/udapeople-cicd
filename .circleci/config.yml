@@ -33,7 +33,7 @@ commands:
             sudo npm install --global n
             sudo n 13.8.0
 
-            sudp npm install -g npx
+            sudo npm install -g npx
             sudo tsc
             sudo npm install -g typescript
             sudo npm run build
