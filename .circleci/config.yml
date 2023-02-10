@@ -264,6 +264,7 @@ jobs:
           name: Run migrations
           command: |
             cd backend
+            sudo chown -R $USER /usr/local/lib/node_modules
             sudo npm install -g npx
             sudo tsc
             sudo npm install -g typescript
