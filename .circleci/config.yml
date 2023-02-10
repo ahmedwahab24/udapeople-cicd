@@ -34,36 +34,36 @@ version: 2.1
             
 
 jobs:
-    JOB:
-      docker:
-        - image: cimg/node:13.8.0
-        - checkout
-        - restore_cache:
-            keys:
-              - TIER-deps-{{ checksum "TIER/package-lock.json" }}
-        - run:
-            name: Install dependencies
-            command: |
-              cd TIER
-              npm install
-        - run:
-            name: Build TIER
-            command: |
-              cd TIER
-              npm run build
-        - run:
-            name: Run TIER unit tests
-            command: |
-              cd TIER
-              npm run test
-        - run:
-            name: Scan TIER packages
-            command: |
-              cd TIER
-              npm audit --audit-level=critical
-        - save_cache:
-            paths: [TIER/node_modules]
-            key: TIER-deps-{{ checksum "TIER/package-lock.json" }}
+  JOB:
+    docker:
+      - image: cimg/node:13.8.0
+      - checkout
+      - restore_cache:
+          keys:
+            - TIER-deps-{{ checksum "TIER/package-lock.json" }}
+      - run:
+          name: Install dependencies
+          command: |
+            cd TIER
+            npm install
+      - run:
+          name: Build TIER
+          command: |
+            cd TIER
+            npm run build
+      - run:
+          name: Run TIER unit tests
+          command: |
+            cd TIER
+            npm run test
+      - run:
+          name: Scan TIER packages
+          command: |
+            cd TIER
+            npm audit --audit-level=critical
+      - save_cache:
+          paths: [TIER/node_modules]
+          key: TIER-deps-{{ checksum "TIER/package-lock.json" }}
 
   build-frontend:
     docker:
