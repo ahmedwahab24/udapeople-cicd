@@ -70,43 +70,65 @@ jobs:
       - image: cimg/node:13.8.0
     steps:
       - checkout
+      # - restore_cache:
+      #     keys:
+      #       - frontend-deps-{{ checksum "frontend/package-lock.json" }}
+      # - run:
+      #     name: Install dependencies
+      #     command: |
+      #       cd frontend
+      #       npm install
+      # - run:
+      #   name: Build frontend
+      #   command: |
+      #     cd frontend
+      #     npm run build
+      # - save_cache:
+      #     paths: [frontend/node_modules]
+      #     key: frontend-deps-{{ checksum "frontend/package-lock.json" }}
       - restore_cache:
-          keys:
-            - frontend-deps-{{ checksum "frontend/package-lock.json" }}
-      - run:
-          name: Install dependencies
-          command: |
-            cd frontend
-            npm install
-      - run:
-        name: Build frontend
-        command: |
+          keys: [frontend-deps]
+      -run:
+        name: Build front-end
+        commands: |
           cd frontend
+          npm install
           npm run build
       - save_cache:
           paths: [frontend/node_modules]
-          key: frontend-deps-{{ checksum "frontend/package-lock.json" }}
+          keys: frontend-deps
 
   build-backend:
     docker:
       - image: cimg/node:13.8.0
     steps:
       - checkout
+      # - restore_cache:
+      #     keys: backend-deps-{{ checksum "backend/package-lock.json" }}
+      # - run:
+      #     name: Install dependencies
+      #     command: |
+      #       cd backend
+      #       npm install
+      # - run:
+      #     name: Build backend
+      #     command: |
+      #       cd backend
+      #       npm run build
+      # - save_cache:
+      #     paths: [backend/node_modules]
+      #     key: backend-deps-{{ checksum "backend/package-lock.json" }}
       - restore_cache:
-          keys: backend-deps-{{ checksum "backend/package-lock.json" }}
-      - run:
-          name: Install dependencies
-          command: |
-            cd backend
-            npm install
-      - run:
-          name: Build backend
-          command: |
-            cd backend
-            npm run build
+          keys: [backend-deps]
+      -run:
+        name: Build back-end
+        commands: |
+          cd backend
+          npm install
+          npm run build
       - save_cache:
-          paths: [backend/node_modules]
-          key: backend-deps-{{ checksum "backend/package-lock.json" }}
+          paths: [frontend/node_modules]
+          keys: backend-deps
 
   # test-frontend:
   #   docker:
