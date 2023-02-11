@@ -4,6 +4,10 @@
     path: ~/backend-app
     state: directory
 
+- name: Pause for 3 minutes
+  ansible.builtin.pause:
+    minutes: 3
+    
 - name: "Unarchive backend files"
   unarchive:
     src: artifact.tar.gz
