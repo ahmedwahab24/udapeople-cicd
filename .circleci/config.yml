@@ -263,12 +263,6 @@ jobs:
       - run:
           name: Run migrations
           command: |
-            # cd backend
-            # sudo npm --force install -g npx
-            # sudo npm --force install -g typescript
-            # npm --force install
-            # tsc
-            # # sudo npm --force run build
             cd backend
             npm i
             npm run build
