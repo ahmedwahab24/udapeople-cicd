@@ -270,7 +270,6 @@ jobs:
             # tsc
             # # sudo npm --force run build
             cd backend
-            cat .env
             npm i
             npm run build
             npm run migrations > migrations_dump.txt
