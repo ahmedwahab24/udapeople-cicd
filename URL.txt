@@ -1,38 +1,18 @@
-<<<<<<< HEAD
 [URL01] Public URL to GitHub repository
 https://github.com/ahmedwahab24/udapeople-cicd.git
 
 
 [URL02] Public URL for your S3 Bucket
-http://udapeople-b67465d.s3-website-us-east-1.amazonaws.com
+http://udapeople-9a9273b.s3-website-us-east-1.amazonaws.com
 
 
 [URL03] Public URL for your CloudFront distribution
-https://d24cf2mk00jkxm.cloudfront.net
+http://d1ygusvizq8krw.cloudfront.net
 
 
 [URL04] Public URLs to deployed application back-end in EC2
-http://50.16.43.149:3030/api/status
+http://34.233.8.42:3030/api/status
 
 
 [URL05] Public URL to your Prometheus Server
-=======
-[URL01] Public URL to GitHub repository
-https://github.com/ahmedwahab24/udapeople-cicd.git
-
-
-[URL02] Public URL for your S3 Bucket
-http://udapeople-b67465d.s3-website-us-east-1.amazonaws.com
-
-
-[URL03] Public URL for your CloudFront distribution
-https://d24cf2mk00jkxm.cloudfront.net
-
-
-[URL04] Public URLs to deployed application back-end in EC2
-http://50.16.43.149:3030/api/status
-
-
-[URL05] Public URL to your Prometheus Server
->>>>>>> ad0d0bfa0d0b4f6a6751d72aea2f69032c7d28a9
-http://3.226.236.221:9090/targets
+http://44.200.130.171:9090/targets
